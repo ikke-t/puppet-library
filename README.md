@@ -1,6 +1,8 @@
 # puppet-library
 
-This is a simple tool to help installing Puppet modules with [librarian-puppet](https://github.com/rodjek/librarian-puppet). It is designed to be used in a single run bootstap and currently supports only Ubuntu servers.
+This is a simple tool to help installing Puppet modules with [librarian-puppet](https://github.com/rodjek/librarian-puppet). It is designed to be used in a single run bootstap and currently supports only Ubuntu and Fedora.
+
+Puppet is not supported yet in Fedora 22 and above (https://tickets.puppetlabs.com/browse/CPR-167), but this tool should work on it after puppet gets fixed.
 
 Define puppetfile as explained in librarian-puppet's instructions. Example:
 ```

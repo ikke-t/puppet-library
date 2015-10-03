@@ -1,11 +1,17 @@
-package { [ 'ruby-dev', 'git', 'make' ]:
-        ensure => 'present',
+$ruby_dev_pkg = $::osfamily ? {
+  'RedHat' => 'ruby-devel',
+  'Debian' => 'ruby-dev',
+  default  => undef,
+}
+
+package { [ $ruby_dev_pkg, 'git', 'make', 'findutils' ]:
+        ensure   => 'present',
 }
 
 package { 'librarian-puppet':
         ensure   => 'installed',
         provider => 'gem',
-        require  => Package['ruby-dev', 'git', 'make'],
+        require  => Package[$ruby_dev_pkg, 'git', 'make', 'findutils'],
 }
 
 exec { 'init-librarian':
