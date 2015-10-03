@@ -6,5 +6,6 @@ mod "juniorsysadmin-chromerepo"
 mod "mjlib-skype"
 mod "garethr-docker"
 mod "example42-yum"
+mod "Aethylred-kerberos"
 
 
